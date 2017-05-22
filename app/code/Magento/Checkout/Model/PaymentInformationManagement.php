@@ -79,9 +79,9 @@ class PaymentInformationManagement implements \Magento\Checkout\Api\PaymentInfor
         \Magento\Quote\Api\Data\AddressInterface $billingAddress = null
     ) {
         $this->savePaymentInformation($cartId, $paymentMethod, $billingAddress);
-        try {
+        //try {
             $orderId = $this->cartManagement->placeOrder($cartId);
-        } catch (\Magento\Framework\Exception\LocalizedException $e) {
+        /*} catch (\Magento\Framework\Exception\LocalizedException $e) {
             throw new CouldNotSaveException(
                 __($e->getMessage()),
                 $e
@@ -93,6 +93,7 @@ class PaymentInformationManagement implements \Magento\Checkout\Api\PaymentInfor
                 $e
             );
         }
+        */
         return $orderId;
     }
 
